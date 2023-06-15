@@ -86,6 +86,37 @@ FROM employees
 SELECT last_name, job_id, department_id, hire_date
 FROM employees
 ORDER BY hire_date ;
+
+
+
+SELECT employee_id, last_name, salary, department_id  
+    FROM employees
+        WHERE employee_id = &employee_num ;
+
+
+
+SELECT first_name|| '' ||last_name "Full Name", salary*12 "Annual salary"
+ FROM employees
+    WHERE salary*12<100000;
+
+
+
+SELECT 'My full name is ' ||first_name|| ' ' ||last_name "Full Name", salary*12 "Annual salary"
+    FROM employees
+        WHERE salary*12>10000;
+
+
+SELECT last_name, department_id, salary
+    FROM employees
+        ORDER BY department_id, salary DESC
+
+
+
+-- upper or lower case used
+SELECT 
+   initcap('MY Full Name is '||first_name|| ' ' ||last_name) "Full Name", salary*12 "Annual Salary"
+    FROM employees
+        WHERE salary*12 >10000;
         
 
 
