@@ -122,6 +122,87 @@ SELECT
 
 
 
+-- 17-06-2023 
+
+SELECT
+    SUBSTR('Hello World',-3,2)
+    FROM dual;
+
+
+SELECT
+   LENGTH('HelloWorld')
+    FROM dual;
+
+
+SELECT
+    first_name, INSTR(first_name, 'l')
+    FROM employees;
+
+
+SELECT
+    first_name, SUBSTR(first_name, 1, LENGTH(first_name)-2)
+    FROM employees;  
+
+
+SELECT
+    lpad(first_name,12,'#')    
+    FROM employees;
+
+
+SELECT
+    rpad(first_name,12,'-')
+    FROM employees;
+
+
+SELECT
+    lpad('MASUD',15,'*')
+    FROM dual;
+
+
+SELECT sysdate
+FROM dual;
+
+
+SELECT SESSIONTIMEZONE, CURRENT_DATE-35 
+FROM DUAL;
+
+
+SELECT SESSIONTIMEZONE, CURRENT_TIMESTAMP 
+FROM DUAL;
+
+
+CREATE TABLE Masud(
+ID number, NAME varchar2(20), EMAIL varchar2(25), PHONE number);
+insert into Masud(ID,NAME,EMAIL,PHONE)
+values(101,'Masud_Rana','masudn@gd.com','01937420091')
+
+SELECT *
+FROM Masud
+
+
+
+SELECT last_name, department_id,
+UPPER(CONCAT(SUBSTR (LAST_NAME, 1, 8), '_US'))
+FROM employees
+WHERE department_id = 60;
+
+
+SELECT ROUND(45.991, 2)
+    FROM dual;
+ 
+    
+SELECT TRUNC(45.926, 2)
+    FROM dual;
+
+    
+SELECT TRUNC(45.923,2), TRUNC(45.923),
+TRUNC(45.923,-1)
+FROM DUAL;
+
+
+
+
+
 
         
         
