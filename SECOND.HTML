@@ -1,0 +1,189 @@
+SELECT last_name, department_id, (SYSDATE-hire_date)/7 AS WEEKS
+FROM employees
+WHERE department_id = 90;
+
+
+SELECT
+    MONTHS_BETWEEN('01-SEP-05','11-JAN-02')
+    FROM dual
+  
+
+SELECT 
+    ADD_MONTHS ('31-JAN-04',6)
+    FROM dual
+    
+    
+SELECT 
+    ADD_MONTHS(sysdate,10)
+    FROM dual
+    
+    
+    SELECT 
+    ADD_MONTHS(sysdate,97)
+    FROM dual
+    
+       
+
+SELECT 
+    ROUND((MONTHS_BETWEEN(sysdate,'11-JAN-97'))/12,0)
+        FROM dual;
+        
+SELECT 
+    ROUND((SYSDATE-to_date('11-JAN-97','DD-MM-YYYY'))/ ,0)
+    FROM dual;
+
+SELECT
+    ROUND(SYSDATE, 'MONTH')
+    FROM dual;
+
+SELECT
+    (SYSDATE-to_date(''
+    
+
+SELECT 
+    NEXT_DAY(SYSDATE, 'Friday')
+    FROM dual;
+    
+
+SELECT 
+    LAST_DAY (SYSDATE)
+    FROM dual;
+    
+    
+SELECT employee_id, last_name, TO_CHAR(hire_date, 'MM/YYYY') Month_Hired
+    FROM employees
+        WHERE last_name = 'Higgins';
+        
+        
+SELECT last_name,
+    TO_CHAR(hire_date, 'fmDD Month YYYY') AS HIREDATE
+        FROM employees;
+        
+SELECT last_name, TO_CHAR(hire_date, 'DD-MON-YYYY')
+        FROM employees
+        WHERE hire_date < TO_DATE('18-JUN-23','DD-Mon-RR');
+
+
+SELECT last_name, TO_CHAR(hire_date, 'DD-Mon-YYYY')
+FROM employees
+WHERE hire_date < TO_DATE('01-Jan-23','DD-Mon-RR');
+
+
+SELECT last_name, salary, NVL(commission_pct, 0),
+(salary*12) + (salary*12*NVL(commission_pct, 0)) AN_SAL
+FROM employees;
+
+
+SELECT first_name, last_name,
+    NULLIF (length(first_name), length(last_name))
+    FROM employees;
+
+
+SELECT last_name, salary, commission_pct,
+COALESCE((salary+(commission_pct*salary)), salary+2000)"New Salary"
+FROM employees;
+
+
+SELECT last_name, job_id, salary,
+        CASE job_id WHEN 'IT_PROG' THEN 1.10*salary
+                    WHEN 'ST_CLERK' THEN 1.15*salary
+                    WHEN 'SA_REP' THEN 1.20*salary
+        ELSE salary END "REVISED_salary"
+        FROM employees;
+
+
+
+SELECT to_char(50) || last_name
+FROM employees;
+
+SELECT to_date('10-Jan-2024', 'DD-MON-YYYY')
+FROM dual;
+
+SELECT to_date('2024-Jan-10', 'YYYY-MON-DD')
+FROM dual:
+
+
+AVG(salary), MAX(salary),
+MIN(salary), SUM(salary)
+FROM employees
+WHERE job_id LIKE '%REP%';
+
+
+SELECT MIN(hire_date), MAX(hire_date)
+FROM employees;
+
+
+SELECT COUNT(*)
+FROM employees
+WHERE department_id = 50;
+
+
+SELECT department_id, AVG(salary)
+FROM employees
+GROUP BY department_id ;
+
+
+SELECT department_id, job_id, SUM(salary)
+FROM employees
+    GROUP BY job_id, department_id
+        ORDER BY job_id;
+        
+        
+SELECT department_id, job_id, SUM(salary)
+FROM employees
+    WHERE department_id > 40
+        GROUP BY department_id, job_id
+        ORDER BY department_id;
+        
+        
+SELECT department_id, AVE(salary)
+    FROM employees
+    GROUP BY department_id
+    HAVING AVG(salary)>8000
+    ORDER BY 1 desc;
+    
+    
+SELECT department_id, AVG(salary)
+FROM employees
+WHERE AVG(salary) > 8000
+GROUP BY department_id;
+
+
+SELECT department_id, AVG(salary)
+FROM employees
+GROUP BY department_id
+HAVING max(salary)>10000;
+
+
+SELECT job_id, SUM(salary) PAYROLL
+FROM employees
+WHERE job_id NOT LIKE '%REP%'
+GROUP BY job_id
+HAVING SUM(salary) > 13000
+ORDER BY SUM (salary);
+
+
+SELECT last_name, employee_id, job_id MAX(salary)
+    FROM employees
+       
+        GROUP BY job_id, last_name, employee_id
+            ORDER BY MAX(salary) DESC;
+            
+
+
+
+SELECT first_name, last_name, salary
+FROM employees
+    
+    WHERE salary =(
+    SELECT MAX(salary)
+    FROM employees
+    
+    WHERE salary <(
+    SELECT MAX(salary)
+    FROM employees));
+
+
+
+
+
