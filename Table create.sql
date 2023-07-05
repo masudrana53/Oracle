@@ -23,11 +23,26 @@ INSERT INTO masud_1277593 VALUES(
 5, 'TAMIM', 108, '05/JUL/2000', 'BANANI');
 
 
+-- The way add new column
+ALTER TABLE masud_1277593
+add
+(Gender VARCHAR2(10));
+
+
 UPDATE masud_1277593
 SET
 salary= null,
 address= 'DHAKA'
 WHERE eid=3;
+
+
+DELETE FROM masud_1277593
+WHERE eid=5;
+
+
+truncate TABLE masud_1277593;
+drop TABLE masud_1277593;
+ROLLBACK;
 
 
 SELECT* 
