@@ -28,6 +28,13 @@ ALTER TABLE masud_1277593
 add
 (Gender VARCHAR2(10));
 
+-- This is way column rename
+ALTER TABLE masud_1277593 RENAME COLUMN salary
+TO new_salary;
+
+-- This is way table rename
+ALTER TABLE masud_1277593 RENAME to new_masud_1277593;
+
 
 UPDATE masud_1277593
 SET

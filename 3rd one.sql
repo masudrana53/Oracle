@@ -96,6 +96,7 @@ WHERE manager_id NOT BETWEEN 100 AND 200
 
 
 -- Form the following table. write a SQL query to find those employees who get second highest salary Return all fields of the employees. USING SUB-QUIRIES
+
 SELECT *
 FROM employees 
 
@@ -118,6 +119,7 @@ SELECT *
 
 
 -- Form the follwing table, write a SQL query to find those employees who work in the same department as 'Clara'. Exclude all those records where first name is 'Clara'. Return first name, last name and hire date
+
 SELECT first_name, last_name, hire_date
     FROM employees
     WHERE department_id=(SELECT department_id
