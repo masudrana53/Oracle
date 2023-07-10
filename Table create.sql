@@ -46,9 +46,13 @@ WHERE eid=3;
 DELETE FROM masud_1277593
 WHERE eid=5;
 
-
+-- Remove data form table
 truncate TABLE masud_1277593;
+
+-- Remove table this way
 drop TABLE masud_1277593;
+
+-- As like Ctrl+z
 ROLLBACK;
 
 

@@ -1,7 +1,7 @@
 
 ----13. From the following tables, write a SQL query to find those employees 
---who work in the same department as ‘Clara’. Exclude all those records where first name 
---is ‘Clara’. Return first name, last name and hire date.
+--who work in the same department as ï¿½Claraï¿½. Exclude all those records where first name 
+--is ï¿½Claraï¿½. Return first name, last name and hire date.
 SELECT first_name, last_name, hire_date, department_id
 FROM employees
 
@@ -18,8 +18,8 @@ AND first_name <> 'Clara';
 
 
 ----13. From the following tables, write a SQL query to find those employees 
---who work in the same department as ‘Clara’. Exclude all those records where first name 
---is ‘Clara’. Return first name, last name and hire date.
+--who work in the same department as ï¿½Claraï¿½. Exclude all those records where first name 
+--is ï¿½Claraï¿½. Return first name, last name and hire date.
 SELECT first_name, last_name, hire_date
 FROM employees
 
@@ -31,7 +31,7 @@ AND  first_name <> 'Clara';
 
 
 --14. From the following tables, write a SQL query to find those employees who work in a department where the 
---employee’s first name contains the letter 'T'. Return employee ID, first name and last name.
+--employeeï¿½s first name contains the letter 'T'. Return employee ID, first name and last name.
 SELECT employee_id, first_name, last_name
 FROM employees
 
@@ -41,10 +41,11 @@ WHERE first_name LIKE '%T%');
 
 
 --14. From the following tables, write a SQL query to find those employees who work in a department where the 
---employee’s first name contains the letter 'T'. Return employee ID, first name and last name.
+--employeeï¿½s first name contains the letter 'T'. Return employee ID, first name and last name.
 
 
---15. From the following tables, write a SQL query to find those employees who earn more than the average salary and work in 
+--15. From the following tables, write a SQL query to find those employees who earn more 
+-- than the average salary and work in 
 --the same department as an employee whose first name contains the letter 'J'. 
 --Return employee ID, first name and salary.
 SELECT employee_id, first_name, salary
@@ -71,7 +72,7 @@ WHERE first_name LIKE '%J%');
 
 
 
-----16. From the following table, write a SQL query to find those employees whose department is located at ‘Toronto’. 
+----16. From the following table, write a SQL query to find those employees whose department is located at ï¿½Torontoï¿½. 
 --Return first name, last name, employee ID, job ID.
 SELECT first_name, last_name, employee_id, job_id
 FROM employees
@@ -95,7 +96,7 @@ WHERE l.city = 'Toronto';
 
 
 --17. From the following table, write a SQL query to find those employees whose salary is lower than that of employees 
---whose job title is ‘MK_MAN’. Return employee ID, first name, last name, job ID.
+--whose job title is ï¿½MK_MANï¿½. Return employee ID, first name, last name, job ID.
 SELECT employee_id, first_name, last_name, job_id
 FROM employees
 
