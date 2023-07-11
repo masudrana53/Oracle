@@ -65,8 +65,9 @@ FROM employees
 WHERE employee_id = 182);
 
 
---QUESTION 06. Write a sql query to calculate the average salary, the number of employees receiving 
---commissions in that department. Return the department name, average salary and number of employees.
+-- --QUESTION 06. Write a sql query to calculate the average salary, the number of employees 
+-- receiving commissions in that department. Return the department name, average salary and 
+-- number of employees.
 SELECT d.department_name, round(avg(salary),2) "Average Salary", count(employee_id) "Number of Employees"
     FROM employees e JOIN departments d
         ON (e.department_id = d.department_id)

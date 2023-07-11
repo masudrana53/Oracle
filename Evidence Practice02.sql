@@ -105,7 +105,8 @@ FROM employees
 WHERE job_id = 'MK_MAN');
 
 
---20. From the following table, write a SQL query to find those employees whose salaries are higher than the average for all departments. 
+--20. From the following table, write a SQL query to find those employees whose 
+-- salaries are higher than the average for all departments. 
 --Return employee ID, first name, last name, job ID.
 SELECT employee_id, first_name, last_name, job_id
 FROM employees
