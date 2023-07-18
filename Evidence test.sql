@@ -8,11 +8,12 @@ NOCACHE
 NOCYCLE;
 
 CREATE TABLE mm_asud(
-    e_id NUMBER DEFAULT msud_1112.NEXTVAL NOT NULL,
+    e_id NUMBER DEFAULT msud_1112.NEXTVAL NOT NULL constraint primary key,
     e_name VARCHAR2 (30),
     e_dob DATE,
     e_hire_date DATE,
-    salary number (8,2)        
+    salary number (8,2)
+    -- constraint e_id_pk primary key (e_id)       
 );
 
 INSERT INTO mm_asud(e_name, e_dob, e_hire_date, salary)

@@ -1,3 +1,12 @@
+-- CREATE TABLE mm_5555(
+--     e_id number constraint e_id_pk primary key,
+--     e_name VARCHAR2 (30),
+--     e_dob DATE,
+--     e_hire_date DATE,
+--     salary number (8,2)
+--     );
+
+
 CREATE TABLE masud_2(
 ID int primary key,
 S_NAME VARCHAR2(30),
